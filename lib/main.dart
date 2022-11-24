@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:connectpamodziv03/welcome_screen.dart';
+import 'package:connectpamodziv03/terms/cookies_screen.dart';
+import 'package:connectpamodziv03/terms/privacy_screen.dart';
+import 'package:connectpamodziv03/terms/terms_screen.dart';
+import 'package:connectpamodziv03/signin_screen.dart';
+import 'package:connectpamodziv03/signup_screen.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: 'Fwitter',
-    home: WelcomeScreen(),
+    title: 'Connect Pamodzi',
+    routes: {
+      '/welcome': (context) => const WelcomeScreen(),
+      '/terms': (context) => const TermsScreen(),
+      '/privacyPolicy': (context) => const PrivacyScreen(),
+      '/cookies': (context) => const CookieScreen(),
+      '/signup': (context) => const SignUpScreen(),
+      '/signin': (context) => const SignInScreen(),
+    },
+    initialRoute: '/welcome',
   ));
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

@@ -14,11 +14,11 @@ class WelcomeScreen extends StatelessWidget {
           SafeArea(
             child: Container(
               margin: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 50.0),
-              child: Image.asset(
-                'assets/people-arrows-solid.svg',
-                height: 30,
-                width: 30,
-              ),
+              // child: 
+              // Image.asset('assets/people-arrows-solid.svg',
+              //   height: 30,
+              //   width: 30,
+              // ),
             ),
           ),
           const SizedBox(height: 110),
@@ -34,7 +34,9 @@ class WelcomeScreen extends StatelessWidget {
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/signin');
+                },
                 child: const Text(
                   'Sign In',
                   style: TextStyle(
@@ -80,7 +82,9 @@ class WelcomeScreen extends StatelessWidget {
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/signup');
+                },
                 child: const Text(
                   'Sign Up',
                   style: TextStyle(
@@ -112,7 +116,7 @@ class WelcomeScreen extends StatelessWidget {
                       style: const TextStyle(color: Colors.blue),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          print('Terms');
+                          Navigator.pushNamed(context, '/terms');
                         }),
                   const TextSpan(text: ', '),
                   TextSpan(
@@ -120,7 +124,7 @@ class WelcomeScreen extends StatelessWidget {
                       style: const TextStyle(color: Colors.blue),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          print('Privacy Policy');
+                          Navigator.pushNamed(context, '/privacyPolicy');
                         }),
                   const TextSpan(text: ', and '),
                   TextSpan(
@@ -128,7 +132,7 @@ class WelcomeScreen extends StatelessWidget {
                       style: const TextStyle(color: Colors.blue),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
-                          print('Cookie Use');
+                          Navigator.pushNamed(context, '/cookies');
                         }),
                   const TextSpan(text: '.'),
                 ],
